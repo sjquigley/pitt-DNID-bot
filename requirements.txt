@@ -1,0 +1,5 @@
+streamlit>=1.28.0
+llama-index>=0.9.0
+llama-index-llms-openai
+llama-index-embeddings-openai
+openai>=1.0.0
