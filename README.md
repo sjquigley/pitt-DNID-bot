@@ -38,10 +38,9 @@ llama-chatbot-template/
 ├── data/                        # YOUR documents go here (currently empty)
 │   └── README.md
 │
-└── examples/                    # 👀 Reference only - working example
-    ├── README.md                # How to run the example
-    ├── app.py                   # Same as main app.py
+└── examples/                    # 👀 Reference only
     ├── llama_test.ipynb         # Learning notebook for Colab
+    ├── index.html         # Full website (HTML, CSS, JS) saved locally w/ embedded chatbot script
     ├── data/                    # Example documents
     │   ├── taylor_swift_biography.html
     │   └── constitution.pdf
