@@ -10,16 +10,19 @@ A Retrieval-Augmented Generation (RAG) chatbot template that answers questions b
 
 ## 📋 Table of Contents
 
-- [Repository Structure](#repository-structure)
-- [What This Does](#what-this-does)
-- [Prerequisites](#prerequisites)
-- [Setup Instructions](#setup-instructions)
-- [Adding Your Data](#adding-your-data)
-- [Testing in Google Colab](#testing-in-google-colab)
-- [Testing with the Example](#testing-with-the-example)
-- [Deploying to Hugging Face](#deploying-to-hugging-face)
-- [Embedding in Your Website](#embedding-in-your-website)
-- [Troubleshooting](#troubleshooting)
+- [Repository Structure](#-repository-structure)
+- [What This Does](#-what-this-does)
+- [Prerequisites](#-prerequisites)
+- [Setup Instructions](#-setup-instructions)
+- [Adding Your Data](#-adding-your-data)
+- [Development & Testing Options](#-development--testing-options)
+- [Testing with the Example](#-testing-with-the-example)
+- [Deploying to Hugging Face](#-deploying-to-hugging-face)
+- [Embedding in Your Website](#-embedding-in-your-website)
+- [Publishing to GitHub Pages](#-publishing-your-website-to-github-pages)
+- [Troubleshooting](#-troubleshooting)
+- [Project Integration](#-project-integration-engcmp-0600)
+- [Recommended Workflow](#-recommended-workflow)
 
 ---
 
@@ -625,7 +628,7 @@ Once deployed to Hugging Face, you can embed your chatbot in your company websit
 
 ### Option 1: Floating Chat Widget (Recommended)
 
-**See an example**: Check out `visuals/embeddedui-demo.png` for a working example!
+**See it in action**: Check out `visuals/embeddedui-demo.html` for a working example!
 
 Add this code before the closing `</body>` tag of your `index.html`:
 
@@ -998,7 +1001,7 @@ If you run into issues:
 - **`examples/llama_test.ipynb`** - Jupyter notebook explaining RAG concepts (start here!)
 - **`examples/README.md`** - How the example chatbot works
 - **`data/README.md`** - Tips for adding documents
-- **`visuals/`** - UI demo screenshots for reference
+- **`visuals/`** - UI demos and screenshots for reference
 
 ---
 
