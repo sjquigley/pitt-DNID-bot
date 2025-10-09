@@ -1,5 +1,19 @@
-streamlit>=1.28.0
-llama-index>=0.9.0
-llama-index-llms-openai
-llama-index-embeddings-openai
-openai>=1.0.0
+# Streamlit web framework
+streamlit==1.50.0
+
+# LlamaIndex core library
+llama-index==0.14.4
+llama-index-core==0.14.4
+
+# LlamaIndex OpenAI integrations
+llama-index-llms-openai==0.6.4
+llama-index-embeddings-openai==0.5.1
+
+# OpenAI API client
+openai==1.109.1
+
+# Environment variable management
+python-dotenv==1.1.1
+
+# IPython dependency (fixes Colab warning)
+jedi==0.19.2

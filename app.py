@@ -26,10 +26,6 @@ st.set_page_config(
 # This should be set before running the Streamlit app
 openai_api_key = os.getenv('OPENAI_API_KEY') or st.secrets.get("OPENAI_API_KEY")
 
-# Get API key from environment variable
-# This should be set before running the Streamlit app
-openai_api_key = os.getenv('OPENAI_API_KEY')
-
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
