@@ -1,5 +1,7 @@
 # 🤖 LlamaIndex RAG Chatbot Template
 
+![final product demo](example/visuals/embeddedui-demo.png)
+
 A Retrieval-Augmented Generation (RAG) chatbot template that answers questions based on your company's documents using LlamaIndex and OpenAI.
 
 > **📘 For Students**: This is a template for your project. The main folder contains your workspace, and the `examples/` folder shows a complete working version for reference.
@@ -371,6 +373,8 @@ Once you understand how RAG works from the notebook, transition to testing your 
    - Click the URL from localtunnel output (looks like `https://xxxxx.loca.lt`)
    - Click "Click to Continue" on the localtunnel page
    - Your Streamlit chatbot interface will appear! 🎉
+
+![chatbot ui demo](example/visuals/ui-demo.jpeg)
 
 10. **Test your chatbot**:
     - Ask questions about your documents
