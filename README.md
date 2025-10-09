@@ -41,6 +41,9 @@ llama-chatbot-template/
 └── examples/                    # 👀 Reference only
     ├── llama_test.ipynb         # Learning notebook for Colab
     ├── index.html         # Full website (HTML, CSS, JS) saved locally w/ embedded chatbot script
+    ├── visuals/         # example images of UI 
+    │   ├── embeddedui-demo.png           # example website w/ embedded chatbot
+    │   └── ui-demo.jpeg         # example ui during local streamlit testing
     ├── data/                    # Example documents
     │   ├── taylor_swift_biography.html
     │   └── constitution.pdf
