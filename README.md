@@ -88,9 +88,9 @@ Before starting, make sure you have:
    - ⚡ Priority access to GPUs
    - 🎓 **100% FREE with your .edu email** - verification takes ~2 seconds!
 3. **An OpenAI API key** 
-   - 🎓 **Your instructor will provide a shared API key** for the class
-   - No payment required! Use the key provided by your instructor
-   - (Alternative: Get your own at [platform.openai.com/api-keys](https://platform.openai.com/api-keys) with ~$5 credit)
+   - 🎓 **I, Amir, will provide a shared API key** for the class
+   - No payment required! Use the key provided by me
+   - (Alternative: Use Gemini API within your Google Colab Workspace for free! For more info, see [this link](https://github.com/googlecolab/colabtools/blob/main/notebooks/Getting_started_with_google_colab_ai.ipynb))
 4. **A GitHub account** ([Sign up here](https://github.com/signup))
 5. **A Hugging Face account** ([Sign up here](https://huggingface.co/join)) - for deployment
 
@@ -480,8 +480,8 @@ If you prefer to develop on your local machine, follow these steps.
    # Copy the template
    cp .env.example .env
    
-   # Edit .env and add the instructor-provided key
-   # OPENAI_API_KEY=your-instructor-provided-key-here
+   # Edit .env and add the provided key
+   # OPENAI_API_KEY=your-provided-key-here
    ```
 
 5. **Add your documents** to the `data/` folder:
