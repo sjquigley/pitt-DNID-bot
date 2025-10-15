@@ -29,7 +29,7 @@ A Retrieval-Augmented Generation (RAG) chatbot template that answers questions b
 ## 📁 Repository Structure
 
 ```
-llama-chatbot-template/
+pitt-llama-project/
 ├── README.md                    # ← You are here!
 ├── .env.example                 # Template for your API key
 ├── .gitignore                   # Protects sensitive files
@@ -87,12 +87,17 @@ Before starting, make sure you have:
    - 💾 More storage
    - ⚡ Priority access to GPUs
    - 🎓 **100% FREE with your .edu email** - verification takes ~2 seconds!
-3. **An OpenAI API key** 
+3. **An OpenAI API key**
    - 🎓 **I, Amir, will provide a shared API key** for the class
    - No payment required! Use the key provided by me
    - (Alternative: Use Gemini API within your Google Colab Workspace for free! For more info, see [this link](https://github.com/googlecolab/colabtools/blob/main/notebooks/Getting_started_with_google_colab_ai.ipynb))
-4. **A GitHub account** ([Sign up here](https://github.com/signup))
-5. **A Hugging Face account** ([Sign up here](https://huggingface.co/join)) - for deployment
+4. **A LlamaCloud API key (Optional but Recommended)**
+   - 🆓 **Free tier available** at [cloud.llamaindex.ai](https://cloud.llamaindex.ai/)
+   - Enables advanced parsing of PDFs with tables, charts, and complex layouts
+   - Get 1,000 free pages per month
+   - Not required but highly recommended for processing complex documents
+5. **A GitHub account** ([Sign up here](https://github.com/signup))
+6. **A Hugging Face account** ([Sign up here](https://huggingface.co/join)) - for deployment
 
 ---
 
@@ -121,15 +126,21 @@ Before starting, make sure you have:
 3. Enter your repository URL or search for your username
 4. Open `examples/llama_test.ipynb` to start learning!
 
-### Step 4: Set Up Your OpenAI API Key in Colab
+### Step 4: Set Up Your API Keys in Colab
 
 **Option A: Using Colab Secrets (Recommended)**
 
 1. In your Colab notebook, click the 🔑 key icon in the left sidebar
 2. Click "Add new secret"
-3. Name: `OPENAI_API_KEY`
-4. Value: `sk-proj-xxxxxxxxxxxxxxxxxxxxx` (your actual key)
-5. Toggle "Notebook access" to ON
+3. Add `OPENAI_API_KEY`:
+   - Name: `OPENAI_API_KEY`
+   - Value: `sk-proj-xxxxxxxxxxxxxxxxxxxxx` (your actual key)
+   - Toggle "Notebook access" to ON
+4. (Optional) Add `LLAMA_CLOUD_API_KEY`:
+   - Click "Add new secret" again
+   - Name: `LLAMA_CLOUD_API_KEY`
+   - Value: `llx-xxxxxxxxxxxxxxxxxxxxx` (your LlamaCloud key)
+   - Toggle "Notebook access" to ON
 
 **Option B: Using Code (Less Secure)**
 
@@ -137,22 +148,42 @@ Before starting, make sure you have:
 from google.colab import userdata
 import os
 
-# This retrieves your secret key
+# This retrieves your secret keys
 os.environ['OPENAI_API_KEY'] = userdata.get('OPENAI_API_KEY')
+# Optional: Enable advanced document parsing
+os.environ['LLAMA_CLOUD_API_KEY'] = userdata.get('LLAMA_CLOUD_API_KEY')
 ```
 
-⚠️ **Important**: Never hardcode your API key directly in the notebook!
+⚠️ **Important**: Never hardcode your API keys directly in the notebook!
 
 ---
 
 ## 📄 Adding Your Data
 
 ### Supported File Types
-- PDF documents (`.pdf`)
+
+#### Complex Documents (Parsed with LlamaParse - requires LLAMA_CLOUD_API_KEY)
+- PDF documents (`.pdf`) - with advanced OCR, table extraction, and chart recognition
+- Word documents (`.docx`, `.doc`)
+- PowerPoint presentations (`.pptx`, `.ppt`)
+- Excel spreadsheets (`.xlsx`, `.xls`)
+
+#### Simple Text Files (Parsed with SimpleDirectoryReader)
 - HTML files (`.html`)
 - Text files (`.txt`)
 - Markdown files (`.md`)
 - CSV files (`.csv`)
+- JSON files (`.json`)
+- XML files (`.xml`)
+
+**New Feature**: The app now uses LlamaParse for advanced document parsing! LlamaParse provides:
+- High-quality OCR for scanned documents
+- Intelligent table extraction (even from images and charts)
+- Multi-column layout handling
+- Chart and graph text extraction
+- Better handling of complex PDFs with mixed content
+
+If LLAMA_CLOUD_API_KEY is not set, the app will fall back to SimpleDirectoryReader for all files.
 
 ### How to Add Documents to Colab
 
@@ -475,13 +506,14 @@ If you prefer to develop on your local machine, follow these steps.
    pip install -r requirements.txt
    ```
 
-4. **Set up your API key**:
+4. **Set up your API keys**:
    ```bash
    # Copy the template
    cp .env.example .env
-   
-   # Edit .env and add the provided key
+
+   # Edit .env and add your keys
    # OPENAI_API_KEY=your-provided-key-here
+   # LLAMA_CLOUD_API_KEY=llx-your-key-here (optional but recommended)
    ```
 
 5. **Add your documents** to the `data/` folder:
@@ -604,10 +636,10 @@ If you want to test with the example documents:
    - `data/` folder with YOUR documents ✅
    - `storage/` folder (optional - speeds up first load) ⚠️
 
-3. **Add your API key as a Secret**:
+3. **Add your API keys as Secrets**:
    - Go to Space Settings → Repository secrets
-   - Add secret: `OPENAI_API_KEY` = `your-key-here`
-   - ⚠️ This is required for the chatbot to work!
+   - Add secret: `OPENAI_API_KEY` = `your-key-here` (required)
+   - Add secret: `LLAMA_CLOUD_API_KEY` = `llx-your-key-here` (optional but recommended for better document parsing)
 
 4. **Wait for build** (2-3 minutes)
    - Check the "Logs" tab for any errors

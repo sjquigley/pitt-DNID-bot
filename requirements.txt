@@ -17,3 +17,6 @@ python-dotenv==1.1.1
 
 # IPython dependency (fixes Colab warning)
 jedi==0.19.2
+
+# LlamaParse for advanced document parsing
+llama-cloud-services>=0.6.61
