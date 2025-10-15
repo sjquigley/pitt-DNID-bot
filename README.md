@@ -176,6 +176,8 @@ os.environ['LLAMA_CLOUD_API_KEY'] = userdata.get('LLAMA_CLOUD_API_KEY')
 - JSON files (`.json`)
 - XML files (`.xml`)
 
+![LlamaParse demo](example/visuals/llamaparse-demo%20Large.jpeg)
+
 **New Feature**: The app now uses LlamaParse for advanced document parsing! LlamaParse provides:
 - High-quality OCR for scanned documents
 - Intelligent table extraction (even from images and charts)
